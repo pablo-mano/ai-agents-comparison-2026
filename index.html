@@ -195,7 +195,7 @@
     <h3 class="col-openclaw">OpenClaw</h3>
     <div class="tagline">Personal AI assistant with 5,700+ skills. Created by Peter Steinberger (PSPDFKit).</div>
     <div class="meta">
-      <span class="badge badge-orange">340k+ &#9733; GitHub</span>
+      <span class="badge badge-orange">375k+ &#9733; GitHub</span>
       <span class="badge badge-gray">MIT</span>
       <span class="badge badge-blue">v4.0</span>
     </div>
@@ -206,14 +206,14 @@
     <div class="tagline">Self-improving agent with a built-in learning loop. Nous Research, Feb 2026.</div>
     <div class="meta">
       <span class="badge badge-purple">160k+ &#9733; GitHub</span>
-      <span class="badge badge-gray">Apache-2.0</span>
-      <span class="badge badge-blue">v0.7</span>
+      <span class="badge badge-gray">MIT</span>
+      <span class="badge badge-blue">v0.17</span>
     </div>
   </div>
 
   <div class="hero-card" style="border-top: 3px solid #22d3ee;">
     <h3 class="col-nanoclaw">NanoClaw</h3>
-    <div class="tagline">Minimalist agent under 50&nbsp;MB with MicroVM isolation. NanoCo &mdash; $12M seed.</div>
+    <div class="tagline">Minimalist agent with Docker container isolation (opt-in micro-VM). NanoCo &mdash; $12M seed.</div>
     <div class="meta">
       <span class="badge badge-blue">20k+ &#9733; GitHub</span>
       <span class="badge badge-gray">MIT</span>
@@ -272,9 +272,9 @@
   <tr>
     <td>License</td>
     <td><span class="badge badge-green">MIT</span></td>
-    <td><span class="badge badge-green">Apache-2.0</span></td>
     <td><span class="badge badge-green">MIT</span></td>
-    <td><span class="badge badge-green">Apache-2.0</span></td>
+    <td><span class="badge badge-green">MIT</span></td>
+    <td><span class="badge badge-green">Apache-2.0 / MIT</span></td>
     <td><span class="badge badge-green">MIT</span></td>
   </tr>
   <tr>
@@ -287,7 +287,7 @@
   </tr>
   <tr>
     <td>GitHub Stars</td>
-    <td><b>340,000+</b></td>
+    <td><b>375,000+</b></td>
     <td><b>160,000+</b></td>
     <td>20,000+</td>
     <td>~5,000</td>
@@ -318,7 +318,7 @@
     <td>GPT-5 / o4 (OpenAI)</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
-    <td class="cross">&#10007; (Claude only)</td>
+    <td class="partial">&#9888; via /add-codex</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
   </tr>
@@ -326,7 +326,7 @@
     <td>Gemini (Google)</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
-    <td class="cross">&#10007;</td>
+    <td class="partial">&#9888; via /add-opencode</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
   </tr>
@@ -334,7 +334,7 @@
     <td>Grok (xAI)</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
-    <td class="cross">&#10007;</td>
+    <td class="partial">&#9888; via OpenRouter</td>
     <td class="cross">&#10007;</td>
     <td class="partial">&#9888; via API</td>
   </tr>
@@ -342,7 +342,7 @@
     <td>Local Models (Ollama / llama.cpp)</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
-    <td class="cross">&#10007;</td>
+    <td class="partial">&#9888; via /add-ollama</td>
     <td class="check">&#10003; (WASM runtime)</td>
     <td class="cross">&#10007;</td>
   </tr>
@@ -387,7 +387,7 @@
     <td>Signal</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
-    <td class="cross">&#10007;</td>
+    <td class="check">&#10003; (/add-signal)</td>
     <td class="cross">&#10007;</td>
     <td class="cross">&#10007;</td>
   </tr>
@@ -395,7 +395,7 @@
     <td>Email / Gmail</td>
     <td class="check">&#10003;</td>
     <td class="check">&#10003;</td>
-    <td class="cross">&#10007; (not out of the box)</td>
+    <td class="check">&#10003; (via Resend)</td>
     <td class="cross">&#10007;</td>
     <td class="check">&#10003;</td>
   </tr>
@@ -403,7 +403,7 @@
     <td>MS Teams</td>
     <td class="check">&#10003;</td>
     <td class="partial">&#9888; community plugin</td>
-    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
     <td class="cross">&#10007;</td>
     <td class="check">&#10003;</td>
   </tr>
@@ -411,7 +411,7 @@
     <td>Total Channels</td>
     <td><b>15+</b></td>
     <td><b>15+</b></td>
-    <td>5+</td>
+    <td>13 (via /add-* skills)</td>
     <td>CLI only</td>
     <td>10+</td>
   </tr>
@@ -424,7 +424,7 @@
     <td>Sandbox Model</td>
     <td>Application-level (shared memory)</td>
     <td>Docker / SSH / Singularity / Modal</td>
-    <td>Docker MicroVM / Apple Containers</td>
+    <td>Docker container (opt-in micro-VM / Apple Container)</td>
     <td>WASM + TEE (Trusted Execution)</td>
     <td>Managed cloud sandbox</td>
   </tr>
@@ -432,7 +432,7 @@
     <td>OS-level Isolation</td>
     <td class="cross">&#10007; (app-level)</td>
     <td class="check">&#10003; (namespace isolation)</td>
-    <td class="check">&#10003; (MicroVM &mdash; separate kernel)</td>
+    <td class="check">&#10003; (Docker; opt-in micro-VM)</td>
     <td class="check">&#10003; (WASM + TEE)</td>
     <td class="check">&#10003; (cloud isolation)</td>
   </tr>
@@ -609,7 +609,7 @@
   </div>
   <div class="verdict-card" style="border-left: 3px solid #22d3ee;">
     <h4 class="col-nanoclaw">NanoClaw &rarr; Security + Simplicity</h4>
-    <p>Under 50&nbsp;MB, 15 source files, MicroVM isolation with a separate kernel. Official Docker partnership. Perfect for enterprise teams that value auditability and minimalism.</p>
+    <p>Minimalist, auditable codebase running on the Claude Agent SDK, with Docker container isolation (opt-in micro-VM). Channels and alternative model providers install on demand via <code>/add-*</code> skills. Official Docker partnership. Perfect for teams that value auditability and minimalism.</p>
   </div>
   <div class="verdict-card" style="border-left: 3px solid #facc15;">
     <h4 class="col-ironclaw">IronClaw &rarr; Maximum Security</h4>
