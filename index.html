@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agents Comparison 2026</title>
+<meta name="description" content="Comprehensive comparison of open-source AI agents: OpenClaw, Hermes Agent, NanoClaw, IronClaw, and TrustClaw.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    padding: 40px 24px;
+    line-height: 1.5;
+  }
+
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 48px 0 16px;
+    padding-left: 12px;
+    border-left: 3px solid #60a5fa;
+    color: #cbd5e1;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    background: #161b22;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: #1e293b;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: #f1f5f9;
+    border-bottom: 2px solid #334155;
+    white-space: nowrap;
+  }
+
+  thead th:first-child { border-radius: 12px 0 0 0; }
+  thead th:last-child  { border-radius: 0 12px 0 0; }
+
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #1e293b;
+    vertical-align: top;
+  }
+
+  tbody tr:hover { background: #1a2233; }
+
+  tbody td:first-child {
+    font-weight: 600;
+    color: #94a3b8;
+    white-space: nowrap;
+    min-width: 170px;
+  }
+
+  .col-openclaw  { color: #f97316; }
+  .col-hermes    { color: #a78bfa; }
+  .col-nanoclaw  { color: #22d3ee; }
+  .col-ironclaw  { color: #facc15; }
+  .col-trustclaw { color: #4ade80; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-green  { background: #064e3b; color: #6ee7b7; }
+  .badge-blue   { background: #1e3a5f; color: #7dd3fc; }
+  .badge-purple { background: #3b0764; color: #c4b5fd; }
+  .badge-orange { background: #431407; color: #fdba74; }
+  .badge-yellow { background: #422006; color: #fde68a; }
+  .badge-red    { background: #450a0a; color: #fca5a5; }
+  .badge-gray   { background: #1e293b; color: #94a3b8; }
+
+  .check   { color: #4ade80; font-weight: 700; }
+  .cross   { color: #64748b; }
+  .partial { color: #facc15; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .hero-card {
+    background: #161b22;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .hero-card:hover { border-color: #334155; }
+
+  .hero-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .hero-card .tagline {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+  }
+
+  .hero-card .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .verdict-card {
+    background: #161b22;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .verdict-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .verdict-card p {
+    font-size: 0.84rem;
+    color: #94a3b8;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 0.78rem;
+    color: #475569;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>AI Agents &mdash; 2026 Comparison</h1>
+<p class="subtitle">OpenClaw &middot; Hermes Agent &middot; NanoClaw &middot; IronClaw &middot; TrustClaw</p>
+
+<!-- HERO CARDS -->
+<div class="hero-grid">
+
+  <div class="hero-card" style="border-top: 3px solid #f97316;">
+    <h3 class="col-openclaw">OpenClaw</h3>
+    <div class="tagline">Personal AI assistant with 5,700+ skills. Created by Peter Steinberger (PSPDFKit).</div>
+    <div class="meta">
+      <span class="badge badge-orange">340k+ &#9733; GitHub</span>
+      <span class="badge badge-gray">MIT</span>
+      <span class="badge badge-blue">v4.0</span>
+    </div>
+  </div>
+
+  <div class="hero-card" style="border-top: 3px solid #a78bfa;">
+    <h3 class="col-hermes">Hermes Agent</h3>
+    <div class="tagline">Self-improving agent with a built-in learning loop. Nous Research, Feb 2026.</div>
+    <div class="meta">
+      <span class="badge badge-purple">160k+ &#9733; GitHub</span>
+      <span class="badge badge-gray">Apache-2.0</span>
+      <span class="badge badge-blue">v0.7</span>
+    </div>
+  </div>
+
+  <div class="hero-card" style="border-top: 3px solid #22d3ee;">
+    <h3 class="col-nanoclaw">NanoClaw</h3>
+    <div class="tagline">Minimalist agent under 50&nbsp;MB with MicroVM isolation. NanoCo &mdash; $12M seed.</div>
+    <div class="meta">
+      <span class="badge badge-blue">20k+ &#9733; GitHub</span>
+      <span class="badge badge-gray">MIT</span>
+      <span class="badge badge-green">Docker partnership</span>
+    </div>
+  </div>
+
+  <div class="hero-card" style="border-top: 3px solid #facc15;">
+    <h3 class="col-ironclaw">IronClaw</h3>
+    <div class="tagline">Rust-based agent with TEE &amp; WASM sandbox. NEAR AI, announced at NEARCON 2026.</div>
+    <div class="meta">
+      <span class="badge badge-yellow">Rust + WASM</span>
+      <span class="badge badge-gray">Apache-2.0</span>
+      <span class="badge badge-red">Enterprise</span>
+    </div>
+  </div>
+
+  <div class="hero-card" style="border-top: 3px solid #4ade80;">
+    <h3 class="col-trustclaw">TrustClaw</h3>
+    <div class="tagline">1,000+ OAuth integrations, managed cloud sandbox. By Composio.</div>
+    <div class="meta">
+      <span class="badge badge-green">1,000+ tools</span>
+      <span class="badge badge-gray">MIT</span>
+      <span class="badge badge-blue">Cloud-first</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- MAIN COMPARISON TABLE -->
+<div class="section-title">Detailed Comparison</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+  <tr>
+    <th>Feature</th>
+    <th class="col-openclaw">OpenClaw</th>
+    <th class="col-hermes">Hermes Agent</th>
+    <th class="col-nanoclaw">NanoClaw</th>
+    <th class="col-ironclaw">IronClaw</th>
+    <th class="col-trustclaw">TrustClaw</th>
+  </tr>
+</thead>
+<tbody>
+
+  <!-- General -->
+  <tr>
+    <td>Creator</td>
+    <td>Peter Steinberger &rarr; OpenClaw Foundation</td>
+    <td>Nous Research</td>
+    <td>NanoCo AI (Cohen brothers)</td>
+    <td>NEAR AI</td>
+    <td>Composio</td>
+  </tr>
+  <tr>
+    <td>License</td>
+    <td><span class="badge badge-green">MIT</span></td>
+    <td><span class="badge badge-green">Apache-2.0</span></td>
+    <td><span class="badge badge-green">MIT</span></td>
+    <td><span class="badge badge-green">Apache-2.0</span></td>
+    <td><span class="badge badge-green">MIT</span></td>
+  </tr>
+  <tr>
+    <td>Implementation Language</td>
+    <td>TypeScript / Node.js</td>
+    <td>Python</td>
+    <td>TypeScript (Claude Agent SDK)</td>
+    <td>Rust</td>
+    <td>Python</td>
+  </tr>
+  <tr>
+    <td>GitHub Stars</td>
+    <td><b>340,000+</b></td>
+    <td><b>160,000+</b></td>
+    <td>20,000+</td>
+    <td>~5,000</td>
+    <td>~8,000</td>
+  </tr>
+  <tr>
+    <td>Funding</td>
+    <td>OpenClaw Foundation (non-profit)</td>
+    <td>Nous Research (VC-backed)</td>
+    <td>$12M seed (Docker, Vercel, monday.com, Hugging Face)</td>
+    <td>NEAR AI / NEAR Foundation</td>
+    <td>Composio (VC-backed)</td>
+  </tr>
+
+  <!-- Models -->
+  <tr>
+    <td colspan="6" style="background:#1e293b; font-weight:700; color:#60a5fa; padding:10px 16px;">Supported AI Models</td>
+  </tr>
+  <tr>
+    <td>Claude (Anthropic)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003; (native, Agent SDK)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>GPT-4o / o3 (OpenAI)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007; (Claude only)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Gemini (Google)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Grok (xAI)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="partial">&#9888; via API</td>
+  </tr>
+  <tr>
+    <td>Local Models (Ollama / llama.cpp)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003; (WASM runtime)</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+
+  <!-- Channels -->
+  <tr>
+    <td colspan="6" style="background:#1e293b; font-weight:700; color:#60a5fa; padding:10px 16px;">Communication Channels</td>
+  </tr>
+  <tr>
+    <td>WhatsApp</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Telegram</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Discord</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Slack</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Signal</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+  <tr>
+    <td>Email / Gmail</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>MS Teams</td>
+    <td class="check">&#10003;</td>
+    <td class="partial">&#9888; community plugin</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Total Channels</td>
+    <td><b>15+</b></td>
+    <td><b>15+</b></td>
+    <td>6+</td>
+    <td>CLI only</td>
+    <td>10+</td>
+  </tr>
+
+  <!-- Security -->
+  <tr>
+    <td colspan="6" style="background:#1e293b; font-weight:700; color:#60a5fa; padding:10px 16px;">Security &amp; Isolation</td>
+  </tr>
+  <tr>
+    <td>Sandbox Model</td>
+    <td>Application-level (shared memory)</td>
+    <td>Docker / SSH / Singularity / Modal</td>
+    <td>Docker MicroVM / Apple Containers</td>
+    <td>WASM + TEE (Trusted Execution)</td>
+    <td>Managed cloud sandbox</td>
+  </tr>
+  <tr>
+    <td>OS-level Isolation</td>
+    <td class="cross">&#10007; (app-level)</td>
+    <td class="check">&#10003; (namespace isolation)</td>
+    <td class="check">&#10003; (MicroVM &mdash; separate kernel)</td>
+    <td class="check">&#10003; (WASM + TEE)</td>
+    <td class="check">&#10003; (cloud isolation)</td>
+  </tr>
+  <tr>
+    <td>Cryptographic Attestation</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003; (TEE attestation)</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+  <tr>
+    <td>Credential Protection</td>
+    <td class="partial">&#9888; basic</td>
+    <td class="check">&#10003; (credential stripping)</td>
+    <td class="check">&#10003; (per-agent isolation)</td>
+    <td class="check">&#10003; (runtime injection)</td>
+    <td class="check">&#10003; (OAuth &mdash; no raw credentials)</td>
+  </tr>
+  <tr>
+    <td>Known CVEs</td>
+    <td><span class="badge badge-red">several reported</span></td>
+    <td><span class="badge badge-yellow">9 CVEs (May 2026)</span></td>
+    <td><span class="badge badge-green">none known</span></td>
+    <td><span class="badge badge-green">none known</span></td>
+    <td><span class="badge badge-green">none known</span></td>
+  </tr>
+
+  <!-- Key Features -->
+  <tr>
+    <td colspan="6" style="background:#1e293b; font-weight:700; color:#60a5fa; padding:10px 16px;">Key Features</td>
+  </tr>
+  <tr>
+    <td>Persistent Memory (cross-session)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003; (with self-improvement)</td>
+    <td class="check">&#10003;</td>
+    <td class="partial">&#9888; limited</td>
+    <td class="check">&#10003; (vector memory)</td>
+  </tr>
+  <tr>
+    <td>Self-Improvement / Learning Loop</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003; &mdash; core feature</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+  <tr>
+    <td>Auto Skill Creation</td>
+    <td class="cross">&#10007; (manual)</td>
+    <td class="check">&#10003; (autonomous)</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+  <tr>
+    <td>Skill / Tool Ecosystem</td>
+    <td><b>5,700+ skills</b> (ClawHub)</td>
+    <td>40+ built-in + auto-generated</td>
+    <td>Leverages Claude Code tools</td>
+    <td>Plugin system</td>
+    <td><b>1,000+ OAuth tools</b></td>
+  </tr>
+  <tr>
+    <td>Cron / Scheduled Tasks</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003; (built-in cron)</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Sub-agents / Parallel Tasks</td>
+    <td class="partial">&#9888; basic</td>
+    <td class="check">&#10003; (isolated sub-agents)</td>
+    <td class="partial">&#9888; (per-channel agents)</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+  <tr>
+    <td>Browser / Web Automation</td>
+    <td class="check">&#10003; (Playwright)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003; (via Claude Code)</td>
+    <td class="partial">&#9888; limited</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Vision / Image Analysis</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003; (via Claude)</td>
+    <td class="partial">&#9888; model-dependent</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>MCP (Model Context Protocol)</td>
+    <td class="check">&#10003; (mcporter skill)</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003; (native)</td>
+    <td class="cross">&#10007;</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Multi-profile / Multi-agent</td>
+    <td class="partial">&#9888; single agent</td>
+    <td class="check">&#10003; (multiple profiles)</td>
+    <td class="check">&#10003; (agent per channel)</td>
+    <td class="check">&#10003;</td>
+    <td class="cross">&#10007;</td>
+  </tr>
+
+  <!-- Deployment -->
+  <tr>
+    <td colspan="6" style="background:#1e293b; font-weight:700; color:#60a5fa; padding:10px 16px;">Deployment &amp; Requirements</td>
+  </tr>
+  <tr>
+    <td>Self-hosted</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="check">&#10003;</td>
+    <td class="partial">&#9888; cloud-first (self-host option)</td>
+  </tr>
+  <tr>
+    <td>Cloud / Managed</td>
+    <td class="cross">&#10007; (local only)</td>
+    <td class="partial">&#9888; (Modal deploy)</td>
+    <td class="cross">&#10007;</td>
+    <td class="partial">&#9888; (NEAR infra)</td>
+    <td class="check">&#10003;</td>
+  </tr>
+  <tr>
+    <td>Install Size</td>
+    <td>~200 MB</td>
+    <td>~300 MB</td>
+    <td><b>&lt;50 MB</b></td>
+    <td>~100 MB (Rust binary)</td>
+    <td>Cloud (no local install)</td>
+  </tr>
+  <tr>
+    <td>macOS / Linux / Windows</td>
+    <td class="check">&#10003; / &#10003; / &#10003;</td>
+    <td class="check">&#10003; / &#10003; / &#9888; WSL</td>
+    <td class="check">&#10003; / &#10003; / &#9888; Docker</td>
+    <td>&#10007; / &#10003; / &#10007;</td>
+    <td>N/A (cloud)</td>
+  </tr>
+  <tr>
+    <td>Cost (excl. LLM API)</td>
+    <td><span class="badge badge-green">free</span></td>
+    <td><span class="badge badge-green">free</span></td>
+    <td><span class="badge badge-green">free</span></td>
+    <td><span class="badge badge-green">free</span></td>
+    <td><span class="badge badge-orange">freemium + paid plans</span></td>
+  </tr>
+
+</tbody>
+</table>
+</div>
+
+<!-- VERDICT -->
+<div class="section-title">Which One Is for You?</div>
+
+<div class="verdict-grid">
+  <div class="verdict-card" style="border-left: 3px solid #f97316;">
+    <h4 class="col-openclaw">OpenClaw &rarr; Largest Ecosystem</h4>
+    <p>Best pick if you want ready-made integrations out of the box. 5,700+ skills, 15+ messaging platforms, massive community. Downside: application-level sandbox &mdash; less secure than competitors.</p>
+  </div>
+  <div class="verdict-card" style="border-left: 3px solid #a78bfa;">
+    <h4 class="col-hermes">Hermes Agent &rarr; Self-Learning Agent</h4>
+    <p>The only agent with a built-in self-improvement loop &mdash; it learns from every task and builds reusable skills. 5 sandbox backends. Ideal for power users and developers who want an agent that compounds over time.</p>
+  </div>
+  <div class="verdict-card" style="border-left: 3px solid #22d3ee;">
+    <h4 class="col-nanoclaw">NanoClaw &rarr; Security + Simplicity</h4>
+    <p>Under 50&nbsp;MB, 15 source files, MicroVM isolation with a separate kernel. Official Docker partnership. Perfect for enterprise teams that value auditability and minimalism.</p>
+  </div>
+  <div class="verdict-card" style="border-left: 3px solid #facc15;">
+    <h4 class="col-ironclaw">IronClaw &rarr; Maximum Security</h4>
+    <p>Rust + WASM + TEE with cryptographic attestation. The only agent with mathematically verifiable isolation. Built for regulated industries (finance, healthcare). Early stage &mdash; small ecosystem.</p>
+  </div>
+  <div class="verdict-card" style="border-left: 3px solid #4ade80;">
+    <h4 class="col-trustclaw">TrustClaw &rarr; Cloud Plug-and-Play</h4>
+    <p>1,000+ OAuth integrations, zero server configuration. Ideal for non-technical users who want to connect their tools instantly without self-hosting.</p>
+  </div>
+</div>
+
+<p class="footer">Data collected: June 2026 &middot; GitHub star counts and versions may change &middot; Sources: GitHub, VentureBeat, Fortune, Docker, official docs</p>
+
+</div>
+</body>
+</html>
